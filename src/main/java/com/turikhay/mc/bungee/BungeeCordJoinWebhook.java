@@ -38,6 +38,7 @@ public class BungeeCordJoinWebhook extends Plugin implements Listener {
             getLogger().log(Level.SEVERE, "Couldn't create webhook client");
             throw new RuntimeException("Couldn't initialize the client", e);
         }
+        getProxy().getPluginManager().registerListener(this, this);
     }
 
     private WebhookClient createClient() throws Exception {
