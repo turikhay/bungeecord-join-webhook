@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.time.Instant;
 import java.util.Map;
 import java.util.logging.Level;
 
@@ -40,6 +41,8 @@ public class SimpleWebhookClient implements WebhookClient {
             try (OutputStreamWriter w = new OutputStreamWriter(c.getOutputStream(), StandardCharsets.UTF_8)) {
                 w.write("event=");
                 w.write(encode(name));
+                w.write("&timestamp=");
+                w.write(encode(Instant.now().toString()));
                 for (Map.Entry<String, String> e : data.entrySet()) {
                     w.write("&");
                     w.write(encode(e.getKey()));
