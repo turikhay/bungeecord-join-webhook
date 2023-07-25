@@ -38,7 +38,7 @@ public class SimpleWebhookClient implements WebhookClient {
             c.setUseCaches(false);
             c.setDoOutput(true);
             try (OutputStreamWriter w = new OutputStreamWriter(c.getOutputStream(), StandardCharsets.UTF_8)) {
-                w.write("name=");
+                w.write("event=");
                 w.write(encode(name));
                 for (Map.Entry<String, String> e : data.entrySet()) {
                     w.write("&");
