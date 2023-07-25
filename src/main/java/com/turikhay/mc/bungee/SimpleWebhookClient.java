@@ -51,7 +51,7 @@ public class SimpleWebhookClient implements WebhookClient {
                 }
             }
             int response = c.getResponseCode();
-            if (response != 204) {
+            if (response < 200 || response > 299) {
                 throw new IOException("invalid response code: " + response);
             }
         } finally {
