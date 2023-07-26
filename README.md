@@ -12,7 +12,7 @@
   </a>
 </p>
 
-Sends HTTP requests to the specified destination when players joins or leaves the network.
+Sends HTTP requests to the specified destination when players join or leave the network.
 
 ```yaml
 # config.yml
