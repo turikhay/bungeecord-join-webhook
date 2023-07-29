@@ -39,6 +39,9 @@ public class AsyncWebhookClient implements WebhookClient {
             }
             throw e1;
         }
+        if (suppressed != null) {
+            throw new RuntimeException(suppressed);
+        }
     }
 
     public static AsyncWebhookClient of(ExecutorService service, WebhookClient delegate) {
