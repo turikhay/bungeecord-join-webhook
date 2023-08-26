@@ -2,9 +2,5 @@
 # Webhook URL
 #
 # This URL will be used to send join/quit callbacks from this server
-# They look like plain POST requests with application/x-www-form-urlencoded MIME type
-# Typical requests could look like this:
-# $ curl -X POST -d "event=join&username=Notch&address=104.86.46.60:1337" https://example.com
-# $ curl -X POST -d "event=quit&username=Notch&address=104.86.46.60:1337" https://example.com
 #
 webhookUrl: https://example.com/
